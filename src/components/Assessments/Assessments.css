@@ -1,0 +1,6 @@
+.assessments-container{
+    min-height: 80vh;
+    flex-wrap: wrap;
+    padding: 8em 0;
+    margin: 0 auto;
+}

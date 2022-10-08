@@ -1,0 +1,17 @@
+
+.test-conatiner{
+    flex-direction: column;
+    width: 24em;
+    height: fit-content;
+    padding: 2em;
+    margin: 2em 4em;
+    border: 6px solid var(--color-pink);
+    border-radius: 10px;
+    background-color: var(--color-blue)
+ 
+}
+
+.test-conatiner:hover{ 
+    background-color: var(--color-pink);
+    opacity: 1;
+}
