@@ -1,0 +1,30 @@
+.assessment-conainer{
+    background: white;
+    height: 100vh;
+    color: black; 
+    min-width: 100%;
+  }
+
+  .header{
+    height: 10%;
+    width: 100%;
+    display: flex;
+    justify-content: flex-end;
+    align-items: center;
+    padding-right: 5em;
+  }
+
+  .btn-next{
+    background: teal;
+    color: white;
+    border: none;
+    border-radius: 5px;
+    padding: 0.65em 4em;
+  }
+
+  .assessment-wrapper{
+        background: rgb(199, 198, 198);
+        height: 80vh;
+        width: 100%;
+        border: 2px solid rgb(190, 188, 188);
+  }
