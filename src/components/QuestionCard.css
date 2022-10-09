@@ -1,0 +1,46 @@
+.question-card{
+    background: white;
+    width: 80%;
+    padding: 2em;
+    margin: 2em auto;
+    align-items: flex-start;
+    color: black; 
+    border-radius: 5px;  
+}
+
+.quesiton-container, .options-container{
+        width: 50%;
+}
+
+  .options-container{
+    text-transform: uppercase;
+    flex-direction: column;
+  }
+  .options-heading{
+    margin-bottom: 1em;
+  }
+
+  .options-list{
+    list-style: none;
+    min-width: 100%;
+  }
+  .option {
+    padding: 1rem;
+    border: 2px solid rgb(207, 196, 196);
+    margin-bottom: 1rem;
+    border-radius: 3px;
+    cursor: pointer;
+    text-align: center;
+    font-weight: bold;
+  }
+
+  @media screen and (max-width: 47em) {
+    .question-card{
+        flex-direction: column;
+        gap: 3em;
+    }
+    .quesiton-container, .options-container{
+        width: 100%;
+}
+  }
+  

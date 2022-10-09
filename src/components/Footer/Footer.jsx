@@ -5,7 +5,7 @@ function Header() {
   return (
     <>
       <footer className="flex-center">
-        <h3> Designed by KidoFun Learning and Playing</h3>
+        <h3> Designed by KidoFun!</h3>
       </footer>
     </>
   );
