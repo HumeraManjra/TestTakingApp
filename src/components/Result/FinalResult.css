@@ -1,0 +1,6 @@
+.finalResult-wrapper{
+    flex-direction: column;
+    gap: 2em;
+    padding: 3em;
+    font-size: 1.5em;
+}
