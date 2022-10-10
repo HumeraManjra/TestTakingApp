@@ -1,11 +1,14 @@
 import React from "react";
 import "./Card.css";
+import { Link } from "react-router-dom";
 
-function Card({ img }) {
+function Card({ img, path }) {
   return (
     <article className="test-conatiner flex-center">
       <img src={img} alt="" />
-      <button>Start Test</button>
+      <Link to={path}>
+        <button>Start Test</button>
+      </Link>
     </article>
   );
 }

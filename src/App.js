@@ -1,14 +1,31 @@
-import Header from "./components/Header/Header";
-import Footer from "./components/Footer/Footer";
-import Assessments from "./components/Assessments/Assessments";
-import QuestionCard from "./components/QuestionCard";
+import { BrowserRouter, Routes, Route } from "react-router-dom";
+import LandingPage from "./Pages/LandingPage";
+import Assessment from "./components/Assessment/Assessment";
+
 function App() {
   return (
     <>
-      <Header />
-      <Assessments />
-      <QuestionCard />
-      <Footer />
+      <BrowserRouter>
+        <Routes>
+          <Route path="/" element={<LandingPage />}></Route>
+          <Route
+            path="/additionTest"
+            element={<Assessment testCategory={"addition"} />}
+          ></Route>
+          <Route
+            path="/multiplicationTest"
+            element={<Assessment testCategory={"multiplication"} />}
+          ></Route>
+          <Route
+            path="/subtractionTest"
+            element={<Assessment testCategory={"subtraction"} />}
+          ></Route>
+          <Route
+            path="/divisionTest"
+            element={<Assessment testCategory={"division"} />}
+          ></Route>
+        </Routes>
+      </BrowserRouter>
     </>
   );
 }

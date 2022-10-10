@@ -1,7 +1,7 @@
 import React from "react";
 import "./QuestionCard.css";
 
-function QuestionCard({ questions, currentQuestion, optionHandler }) {
+function QuestionCard({ questions, currentQuestion, optionHandler, active }) {
   return (
     <article className="container-center">
       <div className="wrapper">
@@ -14,13 +14,14 @@ function QuestionCard({ questions, currentQuestion, optionHandler }) {
           <h4 className="options-heading">Select only one</h4>
           <ul className="options-list">
             {questions[currentQuestion].options.map((option) => {
+              const { id, text, isCorrect } = option;
               return (
                 <li
-                  key={option.id}
-                  className="option"
-                  onClick={() => optionHandler(option.isCorrect)}
+                  key={id}
+                  onClick={() => optionHandler(isCorrect, id)}
+                  className={`option ${active === id && "active"}`}
                 >
-                  {option.text}
+                  {text}
                 </li>
               );
             })}

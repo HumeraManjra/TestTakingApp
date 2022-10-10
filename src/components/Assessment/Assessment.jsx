@@ -1,26 +1,45 @@
 import React from "react";
 import { useState } from "react";
-import QuestionCard from "../QuestionCard/QuestionCard";
-import FinalResult from "../Result/FinalResult";
 import questions from "../../Data";
+import QuestionCard from "../QuestionCard/QuestionCard";
+import Submit from "../Submit/Submit";
+import FinalResult from "../Result/FinalResult";
 import "./Assessment.css";
 
-function Assessment() {
+function Assessment({ testCategory }) {
   const [currentQuestion, setCurrentQuestion] = useState(0);
+  const [active, setActive] = useState("");
   const [score, setScore] = useState(0);
+  const [showQuestions, setShowQuestions] = useState(true);
+  const [showSubmit, setShowSubmit] = useState(false);
   const [showResult, setShowResult] = useState(false);
-  const optionHandler = (isCorrect) => {
+
+  const filteredQuestions = questions.filter(
+    (ques) => ques.category === testCategory
+  );
+
+  const optionHandler = (isCorrect, id) => {
+    setActive(id);
     if (isCorrect) {
       setScore(score + 1);
     }
   };
 
   function nextQuestion() {
-    if (currentQuestion + 1 < questions.length) {
+    setActive("");
+    if (currentQuestion + 1 < filteredQuestions.length) {
       setCurrentQuestion(currentQuestion + 1);
     } else {
-      setShowResult(true);
+      setShowSubmit(true);
+      setShowQuestions(false);
+      setShowResult(false);
     }
+  }
+
+  function submitTest() {
+    setShowResult(true);
+    setShowQuestions(false);
+    setShowSubmit(false);
   }
 
   return (
@@ -31,13 +50,19 @@ function Assessment() {
         </button>
       </div>
       <section className="assessment-wrapper">
-        {showResult ? (
-          <FinalResult score={score} questionsLength={questions.length} />
-        ) : (
+        {showQuestions && (
           <QuestionCard
             optionHandler={optionHandler}
-            questions={questions}
+            questions={filteredQuestions}
             currentQuestion={currentQuestion}
+            active={active}
+          />
+        )}
+        {showSubmit && <Submit submitTest={submitTest} />}
+        {showResult && (
+          <FinalResult
+            score={score}
+            questionsLength={filteredQuestions.length}
           />
         )}
       </section>
