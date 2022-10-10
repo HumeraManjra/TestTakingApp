@@ -1,5 +1,4 @@
 .assessment-conainer{
-    background: white;
     height: 100vh;
     color: black; 
     min-width: 100%;
@@ -15,7 +14,7 @@
   }
 
   .btn-next{
-    background: teal;
+    background: var(--color-pink);
     color: white;
     border: none;
     border-radius: 5px;
@@ -23,7 +22,7 @@
   }
 
   .assessment-wrapper{
-        background: rgb(199, 198, 198);
+        background: var(--color-blue);
         height: 80vh;
         width: 100%;
         border: 2px solid rgb(190, 188, 188);

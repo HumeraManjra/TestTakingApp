@@ -51,6 +51,6 @@
   
 
   .active{
-    background: teal;
+    background: var(--color-pink);
     color: white;
   }
